@@ -131,7 +131,7 @@ void mainMenu()
 
 // all Functions for Admin below
 
-int check(fstream fin, int row_size, fstream fout, int row_size, vector<string> row){
+int check(fstream fin, int row_size, fstream fout, int row_size, vector<string> row, int roll1, int rollnum){
     if (roll1 != rollnum)
     {
         if (!fin.eof())
@@ -205,7 +205,7 @@ void deleteData()
         // except the record to be deleted,
         // into the new file 'reportcardnew.csv'
         // using fout pointer
-        count = check(fin, row_size, fout, row_size, row);
+        count = check(fin, row_size, fout, row_size, row, roll1, rollnum);
         if (fin.eof())
             break;
     }
