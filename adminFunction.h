@@ -10,7 +10,6 @@ using namespace std;
 void addData(void);
 void viewData(void);
 void mainMenu(void);
-//void updateData(void);
 void deleteData(void);
 void adminVerification(void);
 void studentFunction(void);
@@ -21,7 +20,6 @@ void adminFunction()
     cout << "\n\n\t\t\t\t\t | Logged In as Admin |\n";
     cout << "\n\n\t\t\t\t\t 1. Add Students Detail";
     cout << "\n\n\t\t\t\t\t 2. Delete Students";
-    //cout << "\n\n\t\t\t\t\t 3. update Record";
     cout << "\n\n\t\t\t\t\t 4. View Table ";
     cout << "\n\n\t\t\t\t\t 5. Main Menu ";
     cout << "\n\n\t\t\t\t\t 6. Exit";
@@ -45,7 +43,7 @@ void adminFunction()
                 break;
 
             case 3:
-                cout << "this option is not available"; //updateData();
+                cout << "this option is not available"; 
                 break;
 
             case 4:
@@ -74,7 +72,6 @@ void adminFunction()
                 cout << "\n\n\t\t\t\t\t Logged In as Admin";
                 cout << "\n\n\t\t\t\t\t 1. Add Students Record";
                 cout << "\n\n\t\t\t\t\t 2. Delete Record";
-                //  cout << "\n\n\t\t\t\t\t 3. update Record";
                 cout << "\n\n\t\t\t\t\t 4. View Table ";
                 cout << "\n\n\t\t\t\t\t 5. Main Menu ";
                 cout << "\n\n\t\t\t\t\t 6. Exit";
@@ -229,148 +226,7 @@ void deleteData()
     adminFunction();
 }
 
-/*
-void updateData()
-{
-    system("cls");
-    cout << "in update function\n";
-        // File pointer
-        fstream fin, fout;
 
-        // Open an existing record
-        fin.open("data.csv", ios::in);
-
-        // Create a new file to store updated data
-        fout.open("datanew.csv", ios::out);
-
-        int rollnum, roll1, marks, count = 0, i;
-        char sub;
-        int index;
-        string new_marks;
-        string line, word;
-        vector<string> row;
-
-        // Get the roll number from the user
-        cout << "Enter the roll number "
-             << "of the record to be updated: ";
-        cin >> rollnum;
-
-        // Get the data to be updated
-        cout << "Enter the first letter fo the Fields (Eg. b for branch & G for college)"
-             << "to be updated(N/G/B/A/P/C/M): ";
-        cin >> sub;
-
-        // Determine the index of the subject
-        // where Maths has index 7,
-        // Physics has index 6, and so on
-
-        if (sub == 'n' || 'N')
-            index = 1;
-
-        else if (sub == 'g' || sub == 'G')
-            index = 2;
-
-        else if (sub == 'b' || sub == 'B')
-            index = 3;
-
-        else if (sub == 'a' || sub == 'A')
-            index = 4;
-
-        else if (sub == 'p' || sub == 'P')
-            index = 5;
-
-        else if (sub == 'c' || sub == 'C')
-            index = 6;
-
-        else if (sub == 'm' || sub == 'M')
-            index = 7;
-
-        else
-        {
-            cout << "Wrong choice.Enter again\n";
-            updateData();
-        }
-
-        // Get the new marks
-        cout << "Enter new Detail: ";
-        cin >> new_marks;
-
-        // Traverse the file
-        while (!fin.eof())
-        {
-
-            row.clear();
-
-            getline(fin, line);
-            stringstream s(line);
-
-            while (getline(s, word, ','))
-            {
-                row.push_back(word);
-            }
-
-            roll1 = stoi(row[0]);
-            int row_size = row.size();
-
-            if (roll1 == rollnum)
-            {
-                count = 1;
-                stringstream convert;
-
-                // sending a number as a stream into output string
-                convert << new_marks;
-
-                // the str() converts number into string
-                row[index] = convert.str();
-
-                if (!fin.eof())
-                {
-                    for (i = 0; i < row_size - 1; i++)
-                    {
-
-                        // write the updated data
-                        // into a new file 'reportcardnew.csv'
-                        // using fout
-                        fout << row[i] << ", ";
-                    }
-
-                    fout << row[row_size - 1] << "\n";
-                }
-            }
-            else
-            {
-                if (!fin.eof())
-                {
-                    for (i = 0; i < row_size - 1; i++)
-                    {
-
-                        // writing other existing records
-                        // into the new file using fout.
-                        fout << row[i] << ", ";
-                    }
-
-                    // the last column data ends with a '\n'
-                    fout << row[row_size - 1] << "\n";
-                }
-            }
-            if (fin.eof())
-                break;
-        }
-        if (count == 0)
-            cout << "Record not found\n";
-
-        fin.close();
-        fout.close();
-
-        // removing the existing file
-        remove("data.csv");
-
-        // renaming the updated file with the existing file name
-        rename("datadnew.csv", "data.csv");
-    
-}
-
-*/
 void addData()
 {
     system("cls");
