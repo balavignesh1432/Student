@@ -16,11 +16,12 @@ void loadingBar()
 	cout<<"\t\t\t\t\t";
 	
 	for(int i = 0;i<26;i++)
-
-	cout<<a;
-
-	cout<<"\r";
-	cout<<"\t\t\t\t\t";
+	{
+		cout<<a;
+	
+		cout<<"\r";
+		cout<<"\t\t\t\t\t";
+	}
 	for(int i = 0; i < 26 ; i++)
 	{
 		cout<<b;
