@@ -240,7 +240,14 @@ void addData()
         cout << "\t|Enter Data|" << endl
              << endl;
 
-    string rollNumber, name, college, branch, attendance, physics, chemistry, maths;
+    string rollNumber;
+    string name;
+    string college;
+    string branch;
+    string attendance;
+    string physics;
+    string chemistry;
+    string maths;
     string moreData;
 
     cout << "\nEnter Student's roll Number : ";
@@ -344,7 +351,6 @@ void viewData()
     cout << " 5. Main Menu\n";
     cout << " 6. Exit\n";
     cout << "\nEnter choice : ";
-    // adminFunction();
 }
 
 void adminVerification()
@@ -397,7 +403,14 @@ void studentFunction()
          << endl;
     cout << "Roll \t Name \t\t\t College \t branch \t Attendance \t Physics \t Chemistry \t Maths" << endl
          << endl;
-    string rollNumber, name, college, branch, attendance, physics, chemistry, maths;
+    string rollNumber;
+    string name;
+    string college;
+    string branch;
+    string attendance;
+    string physics;
+    string chemistry;
+    string maths;
 
     while (!file.eof()) // file.eof() = detects as how long the f
     {
