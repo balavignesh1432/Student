@@ -5,8 +5,6 @@
 #include <Windows.h>
 #include <stdlib.h>
 
-using namespace std;
-
 void addData(void);
 void viewData(void);
 void mainMenu(void);
@@ -133,14 +131,22 @@ void mainMenu()
 
 // all Functions for Admin below
 
-void check(fstream fin, int row_size, fstream fout, int row_size, vector<string> row){
-    if (!fin.eof())
+int check(fstream fin, int row_size, fstream fout, int row_size, vector<string> row){
+    if (roll1 != rollnum)
     {
-        for (int i = 0; i < row_size - 1; i++)
+        if (!fin.eof())
         {
-            fout << row[i] << ",";
+            for (int i = 0; i < row_size - 1; i++)
+            {
+                fout << row[i] << ",";
+            }
+            fout << row[row_size - 1] << "\n";
         }
-        fout << row[row_size - 1] << "\n";
+        return 0;
+    }
+    else
+    {
+        return 1;
     }
 }
 
@@ -199,14 +205,7 @@ void deleteData()
         // except the record to be deleted,
         // into the new file 'reportcardnew.csv'
         // using fout pointer
-        if (roll1 != rollnum)
-        {
-            check(fin, fout, row_size, row);
-        }
-        else
-        {
-            count = 1;
-        }
+        count = check(fin, row_size, fout, row_size, row);
         if (fin.eof())
             break;
     }
