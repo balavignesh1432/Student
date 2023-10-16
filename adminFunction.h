@@ -133,6 +133,17 @@ void mainMenu()
 
 // all Functions for Admin below
 
+void check(fstream fin, int row_size, fstream fout, int row_size, vector<string> row){
+    if (!fin.eof())
+    {
+        for (int i = 0; i < row_size - 1; i++)
+        {
+            fout << row[i] << ",";
+        }
+        fout << row[row_size - 1] << "\n";
+    }
+}
+
 void deleteData()
 {
     system("cls");
@@ -190,14 +201,7 @@ void deleteData()
         // using fout pointer
         if (roll1 != rollnum)
         {
-            if (!fin.eof())
-            {
-                for (i = 0; i < row_size - 1; i++)
-                {
-                    fout << row[i] << ",";
-                }
-                fout << row[row_size - 1] << "\n";
-            }
+            check(fin, fout, row_size, row);
         }
         else
         {
