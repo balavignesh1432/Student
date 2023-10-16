@@ -141,7 +141,8 @@ void deleteData()
     system("cls");
 
     // Open FIle pointers
-    fstream fin, fout;
+    fstream fin; 
+    fstream fout;
 
     // Open the existing file
     fin.open("data.csv", ios::in);
@@ -149,10 +150,16 @@ void deleteData()
     // Create a new file to store the non-deleted data
     fout.open("datanew.csv", ios::out);
 
-    int rollnum, roll1, marks, count = 0, i;
+    int rollnum;
+    int roll1;
+    int marks;
+    int count = 0;
+    int i;
     char sub;
-    int index, new_marks;
-    string line, word;
+    int index;
+    int new_marks;
+    string line;
+    string word;
     vector<string> row;
 
     // Get the roll number
@@ -448,7 +455,14 @@ void viewData()
          << endl;
     cout << "Roll \t Name \t\t\t College \t branch \t Attendance \t Physics \t Chemistry \t Maths" << endl
          << endl;
-    string rollNumber, name, college, branch, attendance, physics, chemistry, maths;
+    string rollNumber
+    string name;
+    string college;
+    string branch;
+    string attendance;
+    string physics;
+    string chemistry;
+    string maths;
 
     while (!file.eof()) // file.eof() = detects as how long the f
     {
