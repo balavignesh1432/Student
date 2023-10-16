@@ -321,14 +321,6 @@ void viewData()
          << endl;
     cout << "Roll \t Name \t\t\t College \t branch \t Attendance \t Physics \t Chemistry \t Maths" << endl
          << endl;
-    string rollNumber
-    string name;
-    string college;
-    string branch;
-    string attendance;
-    string physics;
-    string chemistry;
-    string maths;
 
     while (!file.eof()) // file.eof() = detects as how long the f
     {
@@ -406,14 +398,6 @@ void studentFunction()
          << endl;
     cout << "Roll \t Name \t\t\t College \t branch \t Attendance \t Physics \t Chemistry \t Maths" << endl
          << endl;
-    string rollNumber;
-    string name;
-    string college;
-    string branch;
-    string attendance;
-    string physics;
-    string chemistry;
-    string maths;
 
     while (!file.eof()) // file.eof() = detects as how long the f
     {
